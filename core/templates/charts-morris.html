@@ -1,6 +1,6 @@
 {% extends "layouts/base.html" %}
 
-{% block title %} Charts Morris {% endblock %} 
+{% block title %} My Analytics {% endblock %} 
 
 <!-- Specific CSS goes HERE -->
 {% block stylesheets %}
@@ -19,13 +19,31 @@
                 <div class="row align-items-center">
                     <div class="col-md-12">
                         <div class="page-header-title">
-                            <h5 class="m-b-10">Morris Chart</h5>
+                            <h5 class="m-b-10">Analytics</h5>
                         </div>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
-                            <li class="breadcrumb-item"><a href="javascript:">Chart</a></li>
-                            <li class="breadcrumb-item"><a href="javascript:">Morris Chart</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:">Analytics</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:">Status</a></li>
                         </ul>
+                        <div class="main-body">
+                        <div class="page-wrapper">
+                        <div class="container">
+                        <div class="card-header">
+                                <h5>Work Efficiency</h5>
+                            </div>
+                            <div class="card-block">
+                                <div id="morris-line-chart" class="ChartShadow" style="height:300px"></div>
+                        </div>
+                        <div class="card-header">
+                                <h5>Health and Wellbeing</h5>
+                            </div>
+                            <div class="card-block">
+                                <div id="morris-area-curved-chart" style="height:300px"></div>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
                     </div>
                 </div>
             </div>

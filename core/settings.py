@@ -29,7 +29,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.app'  # Enable the inner app
+    'apps.app',
+    'apps.Finance',
+    'apps.Health',
+    'apps.Skill',
+    'apps.Analytics'  # Enable the inner app
 ]
 
 MIDDLEWARE = [
@@ -51,7 +55,7 @@ TEMPLATE_DIR = os.path.join(CORE_DIR, "core/templates")  # ROOT dir for template
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR],
+        'DIRS': [TEMPLATE_DIR,],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
