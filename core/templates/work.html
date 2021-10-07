@@ -1,23 +1,89 @@
-{% extends "layouts/base.html" %}
-
-{% block title %}Work Efficiency{% endblock %} 
+{% extends "layouts/base.html" %} {% block title %}Work Efficiency{% endblock %}
 
 <!-- Specific CSS goes HERE -->
+
 {% block stylesheets %}
 
-    <link rel="stylesheet" href="/static/assets/plugins/chart-morris/css/morris.css">
+<link
+  rel="stylesheet"
+  href="/static/assets/plugins/chart-morris/css/morris.css"
+/>
 
-{% endblock stylesheets %}
+{% endblock stylesheets %} {%load crispy_forms_tags %} {% block content %}
+<div class="pcoded-content">
+  <div class="pcoded-inner-content">
+    <div style="text-align: center">
+      <a class="btn btn-primary" href="/apps/work/add" role="button"
+        >Add Task</a
+      >
+    </div>
+    <div class="card mt-3 p-5">
+      <h5 class="card-title text-center">Daily Tasks</h5>
+      <div class="table-responsive">
+        <table class="table table-sm table-striped">
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Subject</th>
+            <th>Status</th>
+            <th>Estimate Time</th>
+            {% comment %}
+            <th>Created at</th>
+            <th>Updated at</th>
+            {% endcomment %}
+            <th>Update</th>
+            <th>Delete</th>
+          </tr>
+          {% for r in work_model %}
+          <tr>
+            <th>{{ r.title }}</th>
+            <th>{{ r.description }}</th>
+            <th>{{ r.subject }}</th>
+            <th>{{ r.status }}</th>
+            <th>{{ r.estimate_time }}</th>
+            {% comment %}
+            <th>{{ r.created_date }}</th>
+            <th>{{ r.updated_date }}</th>
+            {% endcomment %}
+            <th>
+              <a
+                class="btn btn-primary btn-sm"
+                href="/apps/work/update/{{r.id}}"
+                role="button"
+                >Update</a
+              >
+            </th>
+            <th>
+              <a
+                class="btn btn-danger btn-sm"
+                href="/apps/work/delete/{{r.id}}"
+                role="button"
+                >Delete</a
+              >
+            </th>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </div>
 
-{% block content %}
+    <div class="card text-white bg-info p-5" style="text-align: center">
+    <h5 class="card-title text-white text-center">Suggestions</h5>
+    {% for i in suggestions %}
+      {{i}}
+    {% endfor %}
+    </div>
+    </div>
+    </div>
+    {% endblock content %}
 
-{% endblock content %}
-
-<!-- Specific Page JS goes HERE  -->
-{% block javascripts %}
+    <!-- Specific Page JS goes HERE  -->
+    {% block javascripts %}
 
     <script src="/static/assets/plugins/chart-morris/js/raphael.min.js"></script>
     <script src="/static/assets/plugins/chart-morris/js/morris.min.js"></script>
     <script src="/static/assets/js/pages/chart-morris-custom.js"></script>
 
-{% endblock javascripts %}
+    {% endblock javascripts %}
+  </div>
+</div>

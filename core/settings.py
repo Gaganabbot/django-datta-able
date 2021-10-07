@@ -18,7 +18,7 @@ SECRET_KEY = config('SECRET_KEY', default='S#perS3crEt_1122')
 DEBUG = config('DEBUG', default=True, cast=bool)
 
 # load production server from .env
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', config('SERVER', default='127.0.0.1')]
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -33,8 +33,11 @@ INSTALLED_APPS = [
     'apps.Finance',
     'apps.Health',
     'apps.Skill',
-    'apps.Analytics'  # Enable the inner app
+    'apps.Analytics',
+    'crispy_forms'  # Enable the inner app
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

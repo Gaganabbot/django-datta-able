@@ -1,0 +1,40 @@
+{% extends "layouts/base.html" %} {% block title %}Work Efficiency{% endblock %}
+
+<!-- Specific CSS goes HERE -->
+
+{% block stylesheets %}
+
+<link
+  rel="stylesheet"
+  href="/static/assets/plugins/chart-morris/css/morris.css"
+/>
+
+{% endblock stylesheets %} {%load crispy_forms_tags %} {% block content %}
+
+  <div class="container p-2">
+    <div class="card">
+      <h5 class="card-header text-center">Add New Task</h5>
+      <div class="container">
+        <div class="row justify-content-center">
+          <form action="/apps/work" method="post">
+            {% csrf_token %} {% comment %} {{ forms|crispy }} {% endcomment %}
+            {{form|crispy}}
+            <input type="submit" value="Update" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+<script src="/static/assets/plugins/chart-morris/js/raphael.min.js"></script>
+<script src="/static/assets/plugins/chart-morris/js/morris.min.js"></script>
+<script src="/static/assets/js/pages/chart-morris-custom.js"></script>
+
+{% endblock javascripts %}

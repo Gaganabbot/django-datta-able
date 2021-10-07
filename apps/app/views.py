@@ -8,12 +8,19 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
+import requests
+
 
 
 @login_required(login_url="/login/")
 def index(request):
-    context = {'segment': 'index'}
-
+    url = 'https://api.quotable.io/random'
+    # r = requests.get(url)
+    # quote = r.json()
+    # print(quote['content'])
+    # print('-',quote['content'])
+    # context = {'segment': 'index','quote':quote['content'],'quote_author':quote['author']}
+    context={}
     html_template = loader.get_template('index.html')
     return HttpResponse(html_template.render(context, request))
 
