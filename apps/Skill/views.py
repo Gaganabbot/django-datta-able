@@ -35,7 +35,10 @@ def SkillsLearning(request):
 
 def recommend_course(title,num_of_rec=10):
     # ID for title
-    df = pd.read_csv("E:\\DigiMate\\django-datta-able\\apps\\Skill\\udemy_courses.csv")
+    import os
+    course_list=os.getcwd()
+    # print(course_list+"\\apps\\Skill\\udemy_courses.csv")
+    df = pd.read_csv(course_list+"\\apps\\Skill\\udemy_courses.csv")
     dir(nfx)
     print(df)
     df['clean_subject']=df['subject'].apply(nfx.remove_stopwords)
