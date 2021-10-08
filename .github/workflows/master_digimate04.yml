@@ -61,7 +61,8 @@ jobs:
           app-name: 'DigiMate04'
           slot-name: 'Production'
 <<<<<<< HEAD
+<<<<<<< HEAD
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F9CC2F5CB1E445F791003CDA8BC64E57 }}
 =======
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D938757176BC44DFBBDE4365D039D28B }}
->>>>>>> parent of d772cf8 (Add or update the Azure App Service build and deployment workflow config)
+
