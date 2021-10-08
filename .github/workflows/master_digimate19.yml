@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'DigiMate19'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A13131261C564581806564CDF87FDB84 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9338416B2DAF4B1593ED76F495AA50DB }}
